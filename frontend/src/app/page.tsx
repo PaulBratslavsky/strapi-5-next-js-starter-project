@@ -1,7 +1,10 @@
+import type { Block } from "@/types";
+
 import qs from "qs";
 import { getStrapiURL } from "@/lib/utils";
 
 import { Hero } from "@/components/hero";
+import { CardGrid } from "@/components/card-grid";
 
 async function loader() {
   const { fetchData } = await import("@/lib/fetch");
@@ -17,13 +20,16 @@ async function loader() {
               image: {
                 fields: ["url", "alternativeText", "name"],
               },
-              buttonLink:{
+              buttonLink: {
                 populate: "*",
               },
               topLink: {
                 populate: "*",
-              }
+              },
             },
+          },
+          "layout.card-grid": {
+            populate: "*",
           },
         },
       },
@@ -36,10 +42,13 @@ async function loader() {
   return data;
 }
 
-function blockRenderer(block: any) {
+function BlockRenderer(block: Block) {
+  console.log(block.__component, "From BlockRenderer");
   switch (block.__component) {
     case "layout.hero":
-      return <Hero key={block.id} data={block} />;
+      return <Hero key={block.id} {...block} />;
+    case "layout.card-grid":
+      return <CardGrid key={block.id} {...block} />;
     default:
       return null;
   }
@@ -49,6 +58,5 @@ export default async function Home() {
   const data = await loader();
   const blocks = data?.data?.blocks;
   if (!blocks) return null;
-
-  return <div>{blocks ? blocks.map((block: any) => blockRenderer(block)) : null}</div>;
+  return <div>{blocks ? blocks.map((block: any) => BlockRenderer(block)) : null}</div>;
 }

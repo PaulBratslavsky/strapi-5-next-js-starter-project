@@ -39,6 +39,17 @@ export interface LayoutFooter extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutCardGrid extends Struct.ComponentSchema {
+  collectionName: 'components_layout_card_grids';
+  info: {
+    displayName: 'Card Grid';
+    description: '';
+  };
+  attributes: {
+    cardItems: Schema.Attribute.Component<'elements.card', true>;
+  };
+}
+
 export interface ElementsLink extends Struct.ComponentSchema {
   collectionName: 'components_elements_links';
   info: {
@@ -52,13 +63,29 @@ export interface ElementsLink extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_cards';
+  info: {
+    displayName: 'Card';
+  };
+  attributes: {
+    icon: Schema.Attribute.Enumeration<
+      ['Frame', 'Download', 'Globe', 'Sparkles', 'LayoutPanelLeft', 'Palette']
+    >;
+    heading: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'layout.top-nav': LayoutTopNav;
       'layout.hero': LayoutHero;
       'layout.footer': LayoutFooter;
+      'layout.card-grid': LayoutCardGrid;
       'elements.link': ElementsLink;
+      'elements.card': ElementsCard;
     }
   }
 }

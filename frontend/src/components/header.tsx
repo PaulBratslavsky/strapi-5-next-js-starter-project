@@ -1,23 +1,18 @@
+import type { NavLink } from "@/types";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { MobileNavbar } from "@/components/mobile-navbar";
 
-interface Link {
-  href: string;
-  text: string;
-  isExternal: boolean;
-  isPrimary: boolean;
-}
-
 interface HeaderProps {
   data: {
     logoText: string;
-    navItems: Link[];
-    cta: Link;
+    navItems: NavLink[];
+    cta: NavLink;
   };
 }
-export function Header({ data }: Readonly<HeaderProps>) {
+
+export function Header({ data }: Readonly<HeaderProps>) {  
   if (!data) return null;
   const { logoText, navItems, cta } = data;
   return (

@@ -486,7 +486,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
   attributes: {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    blocks: Schema.Attribute.DynamicZone<['layout.hero']>;
+    blocks: Schema.Attribute.DynamicZone<['layout.hero', 'layout.card-grid']>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

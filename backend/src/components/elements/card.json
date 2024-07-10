@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_cards",
+  "info": {
+    "displayName": "Card"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Frame",
+        "Download",
+        "Globe",
+        "Sparkles",
+        "LayoutPanelLeft",
+        "Palette"
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

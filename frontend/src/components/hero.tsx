@@ -1,34 +1,14 @@
-import { ArrowRight } from "lucide-react";
+import type { HeroProps } from "@/types";
+
 import Link from "next/link";
-import { StrapiImage } from "./strapi-image";
+import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { StrapiImage } from "./strapi-image";
 
-interface Link {
-  href: string;
-  text: string;
-  isExternal: boolean;
-  isPrimary: boolean;
-}
-
-interface HeroProps {
-  data: {
-    heading: string;
-    text: string;
-    topLink?: Link;
-    buttonLink?: Link[];
-    image: {
-      url: string;
-      alternativeText: string | null;
-      name: string;
-    };
-  };
-}
-
-export function Hero({ data }: Readonly<HeroProps>) {
+export function Hero(data : Readonly<HeroProps>) {
   if (!data) return null;
-  const { topLink, heading, text, image, buttonLink } = data;
-
+  const { heading, text, topLink, buttonLink, image } = data;
   return (
     <section className="container flex flex-col items-center gap-10 pb-28 pt-20 sm:gap-14 md:flex-row">
       <div className="flex flex-1 flex-col items-center gap-8 md:items-start md:gap-10">
