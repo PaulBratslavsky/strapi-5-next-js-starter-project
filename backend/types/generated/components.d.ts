@@ -13,6 +13,18 @@ export interface LayoutTopNav extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutSectionHeading extends Struct.ComponentSchema {
+  collectionName: 'components_layout_section_headings';
+  info: {
+    displayName: 'Section Heading';
+  };
+  attributes: {
+    subHeading: Schema.Attribute.String;
+    heading: Schema.Attribute.Text;
+    text: Schema.Attribute.Text;
+  };
+}
+
 export interface LayoutHero extends Struct.ComponentSchema {
   collectionName: 'components_layout_heroes';
   info: {
@@ -81,6 +93,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'layout.top-nav': LayoutTopNav;
+      'layout.section-heading': LayoutSectionHeading;
       'layout.hero': LayoutHero;
       'layout.footer': LayoutFooter;
       'layout.card-grid': LayoutCardGrid;

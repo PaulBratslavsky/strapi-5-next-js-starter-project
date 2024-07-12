@@ -22,7 +22,8 @@
       "type": "dynamiczone",
       "components": [
         "layout.hero",
-        "layout.card-grid"
+        "layout.card-grid",
+        "layout.section-heading"
       ]
     }
   }

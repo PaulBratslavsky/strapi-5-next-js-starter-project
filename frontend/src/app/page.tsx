@@ -5,6 +5,7 @@ import { getStrapiURL } from "@/lib/utils";
 
 import { Hero } from "@/components/hero";
 import { CardGrid } from "@/components/card-grid";
+import { SectionHeading } from "@/components/section-heading";
 
 async function loader() {
   const { fetchData } = await import("@/lib/fetch");
@@ -31,6 +32,9 @@ async function loader() {
           "layout.card-grid": {
             populate: "*",
           },
+          "layout.section-heading": {
+            populate: "*",
+          },
         },
       },
     },
@@ -49,6 +53,8 @@ function BlockRenderer(block: Block) {
       return <Hero key={block.id} {...block} />;
     case "layout.card-grid":
       return <CardGrid key={block.id} {...block} />;
+    case "layout.section-heading":
+      return <SectionHeading key={block.id} {...block} />;
     default:
       return null;
   }
