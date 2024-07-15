@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_layout_content_with_images",
+  "info": {
+    "displayName": "Content With Image"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "reverse": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -23,7 +23,8 @@
       "components": [
         "layout.hero",
         "layout.card-grid",
-        "layout.section-heading"
+        "layout.section-heading",
+        "layout.content-with-image"
       ]
     }
   }

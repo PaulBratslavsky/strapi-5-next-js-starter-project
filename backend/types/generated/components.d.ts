@@ -51,6 +51,20 @@ export interface LayoutFooter extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutContentWithImage extends Struct.ComponentSchema {
+  collectionName: 'components_layout_content_with_images';
+  info: {
+    displayName: 'Content With Image';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    subHeading: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    reverse: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 export interface LayoutCardGrid extends Struct.ComponentSchema {
   collectionName: 'components_layout_card_grids';
   info: {
@@ -96,6 +110,7 @@ declare module '@strapi/strapi' {
       'layout.section-heading': LayoutSectionHeading;
       'layout.hero': LayoutHero;
       'layout.footer': LayoutFooter;
+      'layout.content-with-image': LayoutContentWithImage;
       'layout.card-grid': LayoutCardGrid;
       'elements.link': ElementsLink;
       'elements.card': ElementsCard;
