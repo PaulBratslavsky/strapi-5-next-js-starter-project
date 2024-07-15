@@ -64,7 +64,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
   if (!data) return null;
   const { text, socialLinks } = data;
   return (
-    <footer className="container mt-10 flex flex-col items-center justify-between gap-6 py-10 sm:flex-row">
+    <footer className="container flex flex-col items-center justify-between gap-6 py-10 sm:flex-row">
       <p className="text-center text-sm">{text}</p>
       <div className="flex items-center gap-5">
         {socialLinks &&
