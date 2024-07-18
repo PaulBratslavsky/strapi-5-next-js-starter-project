@@ -6,14 +6,15 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StrapiImage } from "./strapi-image";
 
-export function Hero(data : Readonly<HeroProps>) {
+export function Hero(data: Readonly<HeroProps>) {
   if (!data) return null;
   const { heading, text, topLink, buttonLink, image } = data;
+  console.log(topLink, "Top Link");
   return (
     <section className="container flex flex-col items-center gap-10 pb-28 pt-20 sm:gap-14 md:flex-row">
       <div className="flex flex-1 flex-col items-center gap-8 md:items-start md:gap-10">
-        <div className="flex cursor-pointer items-center gap-1 rounded-full border bg-secondary px-3 py-0.5 hover:bg-secondary/60">
-          {topLink && (
+        {topLink && (
+          <div className="flex cursor-pointer items-center gap-1 rounded-full border bg-secondary px-3 py-0.5 hover:bg-secondary/60">
             <Link
               href={topLink.href}
               target={topLink.isExternal ? "_blank" : "_self"}
@@ -22,8 +23,8 @@ export function Hero(data : Readonly<HeroProps>) {
               {topLink.text}
               <ArrowRight size={16} />
             </Link>
-          )}
-        </div>
+          </div>
+        )}
         <h1 className="max-w-2xl text-center font-heading text-4xl font-semibold sm:text-5xl sm:leading-tight md:text-left">
           {heading}
         </h1>

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page",
     "pluralName": "pages",
-    "displayName": "Page"
+    "displayName": "Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,7 +27,8 @@
       "components": [
         "layout.section-heading",
         "layout.hero",
-        "layout.content-with-image"
+        "layout.content-with-image",
+        "layout.card-grid"
       ]
     }
   }
