@@ -4,10 +4,11 @@ import { getStrapiMedia } from "@/lib/utils";
 interface StrapiImageProps {
   src: string;
   alt: string;
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
   className?: string;
   priority?: boolean;
+  fill?: boolean;
 }
 
 export function StrapiImage({
@@ -17,6 +18,7 @@ export function StrapiImage({
   width,
   className,
   priority = false,
+  fill = false,
 }: Readonly<StrapiImageProps>) {
   if (!src) return null;
   const imageUrl = getStrapiMedia(src);
@@ -30,6 +32,7 @@ export function StrapiImage({
       width={width}
       className={className}
       priority={priority}
+      fill={fill}
     />
   );
 }
