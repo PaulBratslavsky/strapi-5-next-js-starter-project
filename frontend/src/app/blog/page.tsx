@@ -88,7 +88,7 @@ export default function BlogRoute() {
       <div className="mt-6 grid auto-rows-fr grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
         {data.map((item) => (
           <Link href="#" key={item.id}>
-            <Card className="h-full shadow-lg">
+            <Card className="h-full shadow-lg border-none">
               <CardContent className="flex h-full flex-col items-start gap-5 px-0">
                 <div className="relative h-52 w-full">
                   <StrapiImage

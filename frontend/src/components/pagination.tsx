@@ -26,7 +26,7 @@ const PaginationArrow: FC<PaginationArrowProps> = ({ direction, href, isDisabled
   return (
     <Button
       onClick={() => router.push(href)}
-      className={`${disabledClassName}`}
+      className={`hover:bg-primary ${disabledClassName}`}
       aria-disabled={isDisabled}
       disabled={isDisabled}
       variant={"outline"}
@@ -58,7 +58,7 @@ export function PaginationComponent({ pageCount, className }: Readonly<Paginatio
           />
         </PaginationItem>
         <PaginationItem>
-          <span className="p-2 font-semibold text-pink-500">Page {currentPage}</span>
+          <span className="p-2 font-semibold text-primary">Page {currentPage}</span>
         </PaginationItem>
         <PaginationItem>
           <PaginationArrow
