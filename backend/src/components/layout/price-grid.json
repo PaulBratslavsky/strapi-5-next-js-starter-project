@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_price_grids",
+  "info": {
+    "displayName": "Price Grid"
+  },
+  "options": {},
+  "attributes": {
+    "priceCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.price-card"
+    }
+  }
+}

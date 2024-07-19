@@ -7,6 +7,8 @@ import { Hero } from "@/components/hero";
 import { CardGrid } from "@/components/card-grid";
 import { SectionHeading } from "@/components/section-heading";
 import ContentWithImage from "@/components/content-with-image";
+import { Pricing } from "@/components/pricing";
+import { CardCarousel } from "@/components/card-carousel";
 
 async function loader() {
   const { fetchData } = await import("@/lib/fetch");
@@ -43,6 +45,14 @@ async function loader() {
               },
             }
           },
+          "layout.price-grid": {
+            populate: {
+              priceCard: {
+                populate: "*",
+              },
+            }
+          },
+         
         },
       },
     },
@@ -55,16 +65,18 @@ async function loader() {
 }
 
 function BlockRenderer(block: Block) {
-  console.log(block.__component, "From BlockRenderer");
+  console.dir(block.__component, { depth: null });
   switch (block.__component) {
     case "layout.hero":
       return <Hero key={block.id} {...block} />;
     case "layout.card-grid":
-      return <CardGrid key={block.id} {...block} />;
+      return <CardCarousel key={block.id} {...block} />;
     case "layout.section-heading":
       return <SectionHeading key={block.id} {...block} />;
     case "layout.content-with-image":
       return <ContentWithImage key={block.id} {...block} />;
+    case "layout.price-grid":
+      return <Pricing key={block.id} {...block} />;
     default:
       return null;
   }
@@ -74,6 +86,7 @@ export default async function Home() {
   const data = await loader();
   const blocks = data?.data?.blocks;
   if (!blocks) return null;
-  return <div>{blocks ? blocks.map((block: any) => BlockRenderer(block)) : null}
+  return <div>
+    {blocks ? blocks.map((block: any) => BlockRenderer(block)) : null}
   </div>;
 }

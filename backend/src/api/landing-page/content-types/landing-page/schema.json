@@ -24,7 +24,8 @@
         "layout.hero",
         "layout.card-grid",
         "layout.section-heading",
-        "layout.content-with-image"
+        "layout.content-with-image",
+        "layout.price-grid"
       ]
     }
   }

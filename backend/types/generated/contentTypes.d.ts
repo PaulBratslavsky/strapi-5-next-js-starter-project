@@ -492,6 +492,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'layout.card-grid',
         'layout.section-heading',
         'layout.content-with-image',
+        'layout.price-grid',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -526,6 +527,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'layout.hero',
         'layout.content-with-image',
         'layout.card-grid',
+        'layout.price-grid',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
