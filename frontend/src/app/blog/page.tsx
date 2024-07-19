@@ -107,7 +107,7 @@ export default function BlogRoute() {
                     orci. Vivamus ante arcu, hendrerit.
                   </p>
                   <div className="flex items-center gap-3">
-                    <span className="rounded-full border bg-accent px-3 py-0.5 text-sm text-accent-foreground">
+                    <span className="rounded-full outline outline-1 outline-primary text-primary px-3 py-0.5 text-sm text-accent-foreground">
                       Coding
                     </span>
                     <span className="text-sm text-muted-foreground">Jul 16, 2024</span>
