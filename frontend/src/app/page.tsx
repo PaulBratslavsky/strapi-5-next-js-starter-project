@@ -4,7 +4,6 @@ import qs from "qs";
 import { getStrapiURL } from "@/lib/utils";
 
 import { Hero } from "@/components/hero";
-import { CardGrid } from "@/components/card-grid";
 import { SectionHeading } from "@/components/section-heading";
 import ContentWithImage from "@/components/content-with-image";
 import { Pricing } from "@/components/pricing";
