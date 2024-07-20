@@ -24,7 +24,7 @@ export default function CategoryButton({
     <button
       type="button"
       onClick={() => handleSelect(value)}
-      className="rounded-full outline outline-1 outline-primary text-primary px-3 py-0.5 text-sm text-accent-foreground"
+      className="rounded-full outline outline-1 outline-primary px-3 py-0.5 text-sm text-accent-foreground"
     >
       {children}
     </button>

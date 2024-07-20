@@ -103,7 +103,7 @@ export default async function BlogRoute({ searchParams }: SearchParamsProps) {
                     <h4 className="text-lg font-semibold">{item.title}</h4>
                     <p className="mb-auto text-muted-foreground">{item.description}</p>
                     <div className="flex items-center gap-3">
-                      <span className="rounded-full outline outline-1 outline-primary text-primary px-3 py-0.5 text-sm text-accent-foreground">
+                      <span className="rounded-full outline outline-1 outline-primary px-3 py-0.5 text-sm text-accent-foreground">
                         {item.category.text}
                       </span>
                       <span className="text-sm text-muted-foreground">{formatDate(item.publishedAt)}</span>
