@@ -11,12 +11,7 @@ interface Props {
   };
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  return {
-    title: "Post",
-    description: "Demo post site",
-  };
-}
+
 
 async function loader(slug: string) {
   const { fetchData } = await import("@/lib/fetch");
@@ -41,6 +36,15 @@ async function loader(slug: string) {
   return data;
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const data = await loader(params.slug);
+  const { title, description } = data?.data[0];
+  console.log(title, description);
+  return {
+    title: title,
+    description: description,
+  };
+}
 export default async function SinglePost({ params }: Props) {
   const data = await loader(params.slug);
   const post = data?.data[0];
