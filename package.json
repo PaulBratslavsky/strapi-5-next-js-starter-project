@@ -2,11 +2,11 @@
   "scripts": {
     "frontend": "yarn dev --prefix ../frontend/",
     "backend": "yarn dev --prefix ../backend/",
-    "setup:frontend": "cd frontend && yarn",
-    "setup:backend": "cd backend && yarn",
-    "setup": "yarn install && yarn setup:frontend && yarn setup:backend",
+    "setup:frontend": "cd frontend && yarn && node ../copy-env.js ./",
+    "setup:backend": "cd backend && yarn && node ../copy-env.js ./",
+    "setup": "yarn install && yarn setup:frontend && yarn setup:backend && yarn seed",
     "dev": "yarn concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\"",
-    "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz",
+    "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz --force",
     "export": "cd backend && yarn strapi export --no-encrypt -f ../seed-data",
     "repo:upstream": "git fetch upstream && git merge upstream/main"
   },
