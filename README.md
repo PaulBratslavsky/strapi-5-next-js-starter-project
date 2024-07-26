@@ -9,7 +9,7 @@ The first step is to clone the project to your local computer and run the setup 
 I will be using GitHub CLI for this example. Let's start by cloning the project with the following command.
 
 ``` bash
-  gh repo clone PaulBratslavsky/reweb-next-strapi-5-example
+  git clone https://github.com/PaulBratslavsky/reweb-next-strapi-5-example.git
 ```
 
 Once you have the project in you local machine, let's install the project dependencies and seed with example data.
