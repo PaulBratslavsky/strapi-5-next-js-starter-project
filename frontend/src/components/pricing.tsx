@@ -13,7 +13,7 @@ export function Pricing(data: Readonly<PriceGridProps>) {
   return (
     <section className="container flex flex-col items-center gap-6 py-24 sm:gap-7">
       <div className="mt-7 grid w-full grid-cols-1 gap-7 lg:grid-cols-3">
-        {priceItems.map(({ id, heading, description, price, selected, feature }) => {
+        {priceItems.map(({ id, heading, description, price, selected, feature, link }) => {
           const selectedStyle = selected ? "border-2 border-primary" : "";
           return (
             <Card className={cn("relative shadow-lg", selectedStyle)} key={id}>
@@ -34,7 +34,7 @@ export function Pricing(data: Readonly<PriceGridProps>) {
                     ))}
                 </ul>
                 <Button size="lg" asChild className="mt-10 w-full">
-                  <Link href="#">Get started</Link>
+                  <Link href={link.href}>{link.text}</Link>
                 </Button>
               </CardContent>
               {selected ? (
