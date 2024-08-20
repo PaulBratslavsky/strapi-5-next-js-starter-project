@@ -1,7 +1,5 @@
 # Strapi 5 and Next.15 Project Example
 
-![project-overview](./img/project-overview.gif)
-
 ## Getting Started With The Project Demo
 
 The first step is to clone the project to your local computer and run the setup script.
@@ -9,7 +7,7 @@ The first step is to clone the project to your local computer and run the setup 
 I will be using GitHub CLI for this example. Let's start by cloning the project with the following command.
 
 ``` bash
-  git clone https://github.com/PaulBratslavsky/reweb-next-strapi-5-example.git
+  git clone https://github.com/PaulBratslavsky/strapi-5-next-js-starter-project.git
 ```
 
 Once you have the project in you local machine, let's install the project dependencies and seed with example data.
