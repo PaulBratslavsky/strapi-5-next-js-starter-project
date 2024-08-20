@@ -73,7 +73,7 @@ I will be using GitHub CLI for this example. Let's start by cloning the project 
 ``` bash
   git clone https://github.com/PaulBratslavsky/strapi-5-next-js-starter-project.git
 ```
-**Step 2: run the setup script
+**Step 2**: run the setup script
 
 Once you have the project on your local machine, let's install the project dependencies and seed them with example data.
 
