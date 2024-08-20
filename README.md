@@ -44,20 +44,38 @@ This API-first approach enables you to build scalable and efficient web applicat
 
 - **Developer-Friendly**: Strapi and Next.js are built with JavaScript/Node.js, providing a consistent development experience. This familiarity can lead to increased productivity and easier maintenance.
 
+## What's New in Strapi 5
+Strapi 5 introduces several powerful features to enhance content management and development efficiency.
 
+- **Draft & Publish**: with a new user-friendly interface, Strapi 5 now separates Draft and Published content into distinct tabs, allowing you to save and publish content in a single action. This feature reduces the risk of publishing errors and makes collaboration smoother than ever.
+
+- **Content History**: Strapi 5 allows you to quickly revert to previous versions of your content, helping you avoid data loss, inefficiency, and workflow disruptions. If you ever need to go back to an earlier version of a page, it's now just a click away.
+
+- **100% TypeScript**: Strapi 5 is now entirely written in TypeScript, offering the benefits of type safety and easier maintainability. This means more robust code, quicker bug detection, and a smoother experience for collaborative projects.
+
+- **Vite Bundling**: Strapi 5 offers Vite bundling support, which speeds up build times. This enhancement improves performance, making your development process more efficient.
+
+- **Plugin CLI**: Strapi 5 introduces an intuitive Plugin CLI, providing a suite of commands that make plugin development more accessible than ever. This tool simplifies creating and managing plugins, saving developers valuable time.
+
+- **New API Format**: Strapi 5's new API format is cleaner and more intuitive, simplifying your interactions with the CMS. It also reduces payload sizes, leading to faster and more efficient data handling.
+Strapi 5 is your go-to open-source headless CMS for modern API creation and seamless content collaboration. It makes coding and publishing more intuitive.
 
 
 ## Getting Started With The Project Demo
 
-The first step is to clone the project to your local computer and run the setup script.
+You can check out the following video or follow the steps outlined below.
+
+**Step 1**: clone the project
+The first step is to clone the project to your local computer.
 
 I will be using GitHub CLI for this example. Let's start by cloning the project with the following command.
 
 ``` bash
   git clone https://github.com/PaulBratslavsky/strapi-5-next-js-starter-project.git
 ```
+**Step 2: run the setup script
 
-Once you have the project in you local machine, let's install the project dependencies and seed with example data.
+Once you have the project on your local machine, let's install the project dependencies and seed them with example data.
 
 We will run the following command from the root of our project.
 
@@ -65,5 +83,6 @@ We will run the following command from the root of our project.
   yarn setup
 ```
 
-You can checkout the `package.json` file for more details on what the script will do.
+You can check out the `package.json` file for more details on what the script will do.
 
+If you have any questions about the project, please leave a comment or stop by Strapi's "open office" hours Monday through Friday at 12:30 PM CST. 
