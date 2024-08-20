@@ -63,7 +63,7 @@ Strapi 5 is your go-to open-source headless CMS for modern API creation and seam
 
 ## Getting Started With The Project Demo
 
-You can check out the following video or follow the steps outlined below.
+You can check out the [following video](https://www.youtube.com/watch?v=RSdRM4gw218) or follow the steps outlined below.
 
 **Step 1**: clone the project
 The first step is to clone the project to your local computer.
