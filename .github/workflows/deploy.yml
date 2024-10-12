@@ -23,9 +23,6 @@ jobs:
     - name: Build frontend for production
       run: yarn build:frontend
 
-    - name: Set up frontend and backend
-      run: yarn setup
-
     - name: Log in to Scaleway Container Registry
       uses: docker/login-action@v2
       with:
@@ -38,8 +35,3 @@ jobs:
       with:
         push: true
         tags: rg.fr-par.scw.cloud/funcscwnsstupefiedjepsen6godfgyv/strapi-nextjs-app:latest
-
-    - name: Start backend and frontend in production
-      run: |
-        yarn start:backend
-        yarn start:frontend
