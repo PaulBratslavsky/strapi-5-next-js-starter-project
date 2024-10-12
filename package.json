@@ -6,6 +6,9 @@
     "setup:backend": "cd backend && yarn && node ../copy-env.js ./",
     "setup": "yarn install && yarn setup:frontend && yarn setup:backend && yarn seed",
     "dev": "yarn concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\"",
+    "build:frontend": "cd frontend && yarn build",  // Frontend für die Produktion bauen
+    "start:frontend": "cd frontend && yarn start",  // Frontend im Produktionsmodus starten
+    "start:backend": "cd backend && NODE_ENV=production yarn start",  // Backend im Produktionsmodus starten
     "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz --force",
     "export": "cd backend && yarn strapi export --no-encrypt -f ../seed-data",
     "repo:upstream": "git fetch upstream && git merge upstream/main"
