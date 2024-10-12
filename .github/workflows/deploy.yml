@@ -29,4 +29,5 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: rg.fr-par.scw.cloud/your-namespace/your-image-name:latest
+        tags: rg.fr-par.scw.cloud/funcscwnsstupefiedjepsen6godfgyv/strapi-nextjs-app:latest
+
