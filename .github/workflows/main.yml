@@ -1,0 +1,32 @@
+name: Build and Deploy to Scaleway (Production)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: yarn install --production
+
+    - name: Build frontend for production
+      run: yarn build
+
+    - name: Log in to Scaleway Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: rg.fr-par.scw.cloud
+        username: ${{ secrets.SCW_ACCESS_KEY }}
+        password: ${{ secrets.SCW_SECRET_KEY }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: rg.fr-par.scw.cloud/your-namespace/your-image-name:latest
