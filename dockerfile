@@ -6,17 +6,19 @@ WORKDIR /app
 
 # Step 3: Copy the package.json and yarn.lock to install dependencies
 COPY package*.json ./
+
+# Step 4: Install both backend and frontend dependencies
 RUN yarn install --production
 
-# Step 4: Copy the rest of the code into the container
+# Step 5: Copy the rest of the code into the container
 COPY . .
 
-# Step 5: Build the frontend for production (assuming it's a Next.js or similar app)
-RUN yarn build:frontend
+# Step 6: Build the frontend for production (Next.js)
+RUN cd frontend && yarn install && yarn build
 
-# Step 6: Expose the ports for backend (1337 for Strapi) and frontend (3000 for Next.js or other)
+# Step 7: Expose ports for backend (1337) and frontend (3000)
 EXPOSE 1337
 EXPOSE 3000
 
-# Step 7: Start both Strapi backend and Frontend in production mode
-CMD ["yarn", "concurrently", "yarn start:backend", "yarn start:frontend"]
+# Step 8: Start both Strapi backend and Next.js frontend in production mode
+CMD ["yarn", "concurrently", "\"yarn start:backend\"", "\"yarn start:frontend\""]
