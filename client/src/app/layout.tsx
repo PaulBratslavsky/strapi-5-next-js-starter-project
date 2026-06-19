@@ -3,7 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Nunito } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import { cn } from "@/lib/utils";
+import { cn, getStrapiURL } from "@/lib/utils";
+import { Preview } from "@/components/custom/preview";
 
 const fontSans = Inter({
   variable: "--font-sans",
@@ -42,6 +43,7 @@ export default async function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Preview strapiUrl={getStrapiURL()} />
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import sdk from "@/lib/sdk";
+import sdk, { getSdk } from "@/lib/sdk";
 const PAGE_SIZE = 3;
 
 export async function getGlobalPageData() {
@@ -16,6 +16,7 @@ export async function getGlobalPageData() {
 }
 
 export async function getLandingPage() {
+  const sdk = await getSdk();
   const landingPage = await sdk.single("landing-page").find({
     populate: {
       blocks: {
@@ -68,6 +69,7 @@ export async function getAllPagesSlugs() {
 }
 
 export async function getPageBySlug(slug: string, status: string) {
+  const sdk = await getSdk();
   const page = await sdk.collection("pages").find({
     populate: {
       blocks: {
@@ -117,6 +119,7 @@ export async function getCategories() {
 }
 
 export async function getBlogPostBySlug(slug: string, status: string) {
+  const sdk = await getSdk();
   const post = await sdk.collection("posts").find({
     populate: {
       image: {
